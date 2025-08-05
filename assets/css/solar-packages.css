@@ -1,0 +1,193 @@
+.SS {
+    font-size: 3.1rem;
+    text-align: center;
+    color: #fff;
+}
+
+.Solarpackages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.solarcard {
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px -1px 8px rgb(0 0 0 / 83%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.solarcard h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.solarcard p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #ffffff;
+}
+
+.solarcard img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1ebd57;
+}
+
+
+/*------------------------------------media queries for the cards--------------------------------------------------------------------*/
+
+@media (max-width: 480px) {
+    .SS {
+        font-size: 2rem;
+    }
+}
+
+
+/*-----------------------------------------------------------------CARDS FOR THE SECTIONS IN  THE WEBSITE WERE THERE ARE FLIERS------------------------------------------------------------*/
+
+.packages h2 {
+    font-size: 3.1rem;
+    color: black;
+    margin-bottom: 1.3rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.packages {
+    padding: 94px;
+    /* Add some padding around the entire section */
+    text-align: center;
+    /* Center the heading if you like */
+    margin-top: -4%;
+}
+
+.package-grid-container {
+    display: grid;
+    /* This is the main declaration for CSS Grid */
+    /* Define your columns. auto-fit combined with minmax is great for responsiveness. */
+    /* It tries to fit as many 300px columns as possible, but not smaller than 250px. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 94px;
+    /* Space between grid items (images) */
+    max-width: 1300px;
+    /* Optional: Limit the max width of your grid for better readability on large screens */
+    margin: 0 auto;
+    /* Center the grid container within the .packages section */
+    padding: 10px;
+    /* Optional: Padding inside the grid container */
+}
+
+.package-grid-container img {
+    width: 100%;
+    /* Make images fill their grid cell */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Subtle shadow for depth */
+    transition: transform 0.3s ease;
+    /* Optional: Smooth hover effect */
+}
+
+.package-grid-container img:hover {
+    transform: translateY(-5px);
+    /* Optional: Lift effect on hover */
+}
+
+
+/* --- Package Slider Enhancements --- */
+
+
+/* Container for the entire slider section */
+
+.packages {
+    overflow: hidden;
+    /* This is CRUCIAL to hide the images outside the visible area, creating the slider effect */
+    padding: 20px;
+    /* Optional: Adds some space around the slider section */
+    /* If you want the slider to stretch full width, ensure no max-width is restricting it here or on its parents */
+}
+
+
+/* The visible window/viewport for the slider */
+
+.package-slider {
+    width: 100%;
+    /* Ensures the slider takes the full width of its parent (.packages) */
+}
+
+
+/* The actual element that slides, containing all the images */
+
+.slider-wrapper {
+    display: flex;
+    /* Arranges the images horizontally in a single line */
+    width: fit-content;
+    /* This makes the wrapper exactly as wide as the sum of all its children (images + margins) */
+    /* ***** THIS IS THE MISSING PIECE TO APPLY THE ANIMATION ***** */
+    /* We will apply the animation here. The duration will be set by JavaScript for precision. */
+    /* Placeholder for initial setup, JavaScript will override animation-duration and --slide-distance */
+    animation: infiniteSlide linear infinite;
+    /* Apply the keyframes here */
+}
+
+
+/* Styles for individual images within the slider */
+
+.slider-wrapper img {
+    width: 30%;
+    /* IMPORTANT: Set a fixed width for consistent image display and accurate animation calculation */
+    margin-right: 20px;
+    /* Space between each image */
+    flex-shrink: 0;
+    /* Prevents images from shrinking if there's not enough space in the flex container */
+    object-fit: cover;
+    /* Ensures the image covers its box, cropping if necessary, without distortion */
+}
+
+@media(max-width:480px) {
+    .packages {
+        margin-top: -3rem;
+    }
+    .packages h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .contact-us h2 {
+        margin-top: -5rem;
+    }
+    .contact-us {
+        text-align: left;
+        margin: 4rem 0;
+        padding: 0rem;
+        background-color: white;
+    }
+    .parallax {
+        background-image: url(../images/paralax.png);
+        background-attachment: fixed;
+        background-position: center;
+        height: 100%;
+        background-size: cover;
+        margin: 5rem 0rem 0rem;
+    }
+}
